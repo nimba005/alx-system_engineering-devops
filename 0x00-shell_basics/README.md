@@ -1,1 +1,1 @@
-A script that prints
+A symbolic link
