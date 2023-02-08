@@ -1,1 +1,1 @@
-A symbolic link
+A script that copies all
