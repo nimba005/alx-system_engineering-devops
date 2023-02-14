@@ -1,0 +1,2 @@
+#!/bin/bash
+printf '%0\n' > $((echo $ water | tr water 01234)) + $> ((echo $ stir. 012345)) | tr 0123456
