@@ -1,4 +1,4 @@
-[0x06. Regular expression](https://intranet.alxswe.com/projects/78#quiz-completed:~:text=0x06.%20Regular%20expression)
+## [**0x06. Regular expression**](https://intranet.alxswe.com/projects/78#quiz-completed:~:text=0x06.%20Regular%20expression)
 
 * [Regular Expression](https://intranet.alxswe.com/concepts/29)
 * [Regular expressions - basics](https://intranet.alxswe.com/rltoken/6VeaVMaugIxcFAwA27TBdQ)
