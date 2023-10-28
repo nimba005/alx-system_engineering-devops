@@ -1,5 +1,5 @@
 ## 0x09-web_infrastructure_design
-## [Image](https://imgur.com/RjJs5eT)
+## [Image](https://imgur.com/qV6OiuI)
 ## 2-secured_and_monitored_web_infrastructure
 Q1. For every additional element why you added them? 
 
