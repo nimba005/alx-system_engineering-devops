@@ -43,5 +43,5 @@ backend servers
     server 62184-web-02 54.165.228.84:80 check
 " >> /etc/haproxy/haproxy.cfg
 
-sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
+sudo systemctl enable haproxy
