@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Requests using a round-robin algorithm
-
+sudo -s
 sudo apt-get install -y haproxy
 
 echo "ENABLE=1" >> /etc/default/haproxy
@@ -41,7 +41,8 @@ backend servers
     timeout server 30000
     balance roundrobin
     server 62184-web-01 54.90.33.211:80 check
-    server 62184-web-01 54.165.228.84:80 check
+    server 62184-web-02 54.165.228.84:80 check
 " >> /etc/haproxy/haproxy.cfg
 
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
