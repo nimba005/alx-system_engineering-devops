@@ -1,16 +1,26 @@
-# install and configure nginx
-exec {'update':
-  command => '/usr/bin/apt-get update',
-}
--> package { 'nginx':
+# Install HAProxy package
+package { 'haproxy':
   ensure => installed,
 }
--> file_line { 'header_served_by':
-  path  => '/etc/nginx/sites-available/default',
-  match => "^server {',
-  line  => "server {\n\tadd_header X-Served-By \"${hostname}\";",
-  multiple => false,
+
+# Configure HAProxy
+file { '/etc/haproxy/haproxy.cfg':
+  content => "
+frontend http-in
+  bind *:80
+  default_backend servers
+
+backend servers
+  balance roundrobin
+  server web-01 54.90.33.211:80 check
+  server web-02 54.165.228.84:80 check
+",
+  mode => '62184',
+  notify => Service['haproxy'],
 }
--> exec {'run':
-  command => 'usr/sbin/service nginx restart',
+
+# Enable and start HAProxy service
+service { 'haproxy':
+  ensure => running,
+  enable => true,
 }
