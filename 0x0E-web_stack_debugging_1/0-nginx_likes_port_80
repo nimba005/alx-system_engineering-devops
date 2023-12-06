@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configures a server to listen on port 80 of all server's active IPv4 IPs
+# REMOVES THE DEFAULT CONFIGURATION FILE
+rm /etc/nginx/sites-enabled/default
+
+# CONFIGURE NGINX TO LISTEN ON PORT 80 FOR ALL ACTIVE IP4V
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+# RESTART NGINX
+sudo service nginx restart
