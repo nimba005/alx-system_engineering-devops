@@ -34,10 +34,12 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-listen myserver
+frontend myfrontend
         bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.noran.tech/www.noran.tech.pem
-        redirect scheme https code 301 if !{ ssl_fc }
+        bind *:443 ssl crt /etc/letsencrypt/live/www.realnimbake.tech/www.realnimbake.tech.pem
+        redirect scheme https code 301 if { hdr(host) -i www.realnimbake.tech }
+	default_backend myservers
+backend myservers
         balance roundrobin
-        server server1 54.90.33.211:80 check
-        server server2 54.165.228.84:80 check 
+        server 62184-web-01 54.90.33.211:80 check
+        server 62184-web-02 54.165.228.84:80 check 
