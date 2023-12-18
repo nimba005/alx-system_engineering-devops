@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Run Software as the root user
+
+sudo -u "$1" whoami
