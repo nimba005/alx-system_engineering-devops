@@ -9,8 +9,7 @@ echo "Hello World!" > /etc/nginx/html/index.html
 sudo touch /etc/nginx/html/404.html
 echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 
-sudo bash -c 'cat <<EOL > /etc/nginx/sites-available/default
-server {
+printf %s "server {
     listen 80;
     listen [::]:80 default_server;
     add_header X-Served-By $HOSTNAME;
@@ -21,9 +20,9 @@ server {
     }
     error_page 404 /404.html;
     location /404 {
-    root /etc/nginx/html;
-    internal;
+      root /etc/nginx/html;
+      internal;
     }
-}
-EOL'
+}" > /etc/nginx/sites-available/default
+
 sudo service nginx restart
