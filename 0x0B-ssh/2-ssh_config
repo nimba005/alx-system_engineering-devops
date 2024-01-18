@@ -7,5 +7,5 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
-    IdentityFile ~/.ssh/id_rsa
+    IdentityFile ~/.ssh/school
     PasswordAuthentication no
