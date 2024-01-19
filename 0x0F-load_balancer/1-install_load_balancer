@@ -32,7 +32,7 @@ defaults
 
 frontend http-in
     timeout client 30000
-    bind 0:80
+    bind 0:8080
     default_backend servers
 
 backend servers
