@@ -39,5 +39,5 @@ listen myserver
         bind *:443 ssl crt /etc/letsencrypt/live/www.realnimbake.tech/web.pem
         redirect scheme https code 301 if !{ ssl_fc }
         balance roundrobin
-        server 62184-web-01 54.90.33.211:80 check
-        server 62184-web-02 54.165.228.84:80 check 
+        server 62184-web-01 100.26.133.19:80 check
+        server 62184-web-02 54.237.78.42:80 check 
